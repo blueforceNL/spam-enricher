@@ -1,0 +1,32 @@
+[ENRICHER]
+database_addr = localhost
+database_name = spam_analyzer
+database_user = spam-analyzer
+database_passwd = ChangeMe
+ttl_days = 1
+
+[MODULES]
+names=vpnapi,ipintel,ip2proxy
+
+[vpnapi]
+enabled = yes
+supported_types = ip
+api_key = ChangeMe
+quota = 900
+delay = 5
+
+[ipintel]
+enabled = yes
+supported_types = ip
+contact = ChangeMe
+quota = 500
+delay = 60
+
+[ip2proxy]
+enabled = yes
+supported_types = ip
+quota = 2147483647
+delay = 0
+db_name = ip2location
+db_user = enricher
+db_pass = ChangeMe

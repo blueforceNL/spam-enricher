@@ -1,0 +1,14 @@
+[Unit]
+Description=Spam enricher
+After=spam-analyzer.service
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=sinkhole
+WorkingDirectory=/opt/spam-enricher
+ExecStart=python3 spam_enricher.py
+
+[Install]
+WantedBy=multi-user.target
